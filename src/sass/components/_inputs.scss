@@ -1,0 +1,105 @@
+.calendar {
+  border: 1px solid $color-primary-3;
+  color: $color-primary-5;
+  display: flex;
+  max-width: 500px;
+  padding-left: 0;
+  align-items: center;
+
+  .section-header {
+    line-height: 2;
+    color: $color-primary-4;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: start;
+  }
+
+  > :nth-child(2) {
+    border-left: 1px solid $color-primary-3;
+  }
+
+  &:hover {
+    background-color: $color-primary-1;
+    cursor: initial;
+  }
+
+  [class*='icon-'] {
+    color: $color-ternary;
+
+    &::before {
+      left: 150%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.check {
+  position: relative;
+  display: inline-block;
+
+  &__box {
+    border: 1px solid $color-primary-3;
+    color: $color-primary-5;
+    height: 1.3rem;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1.3rem;
+
+    &::after {
+      content: '';
+      display: none;
+      position: absolute;
+    }
+  }
+
+  &__label {
+    padding-left: 2 * $basesize;
+    margin-bottom: $basesize;
+  }
+
+  input {
+    visibility: hidden;
+  }
+
+  input:checked ~ &__box {
+    background-color: $color-positive-active;
+    border-color: $color-positive-active;
+
+    &::after {
+      @include absolute-center;
+      color: $color-primary-1;
+      content: '\f00c';
+      display: block;
+      font-family: 'FontAwesome';
+    }
+  }
+
+  @media (max-width: 767px) {
+    $basesize: 0.44rem;
+
+    .calendar .section-header {
+      width: 20 * $basesize;
+    }
+  }
+}
+
+.field {
+  display: flex;
+  justify-content: space-between;
+
+  > * {
+    margin: 0.5 * $basesize 2 * $basesize;
+  }
+
+  > input::placeholder {
+    color: $color-primary-3;
+  }
+}
+
+@media (max-width: 575px) {
+  .field {
+    flex-direction: column;
+    margin-top: $basesize;
+  }
+}

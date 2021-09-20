@@ -1,0 +1,29 @@
+@mixin absolute-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin menu($basesize) {
+  display: flex;
+  position: fixed;
+
+  &__elem {
+    display: flex;
+    position: relative;
+
+    &__icon,
+    &__text,
+    &__btn {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+  }
+}
+
+@mixin sidebar($basesize) {
+  width: 24 * $basesize;
+  background-color: $color-primary-5;
+}

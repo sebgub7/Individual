@@ -1,0 +1,38 @@
+.notification__badge {
+  opacity: 0;
+  transition: $transition;
+  position: absolute;
+  width: $basesize;
+  height: $basesize;
+  border-radius: 50%;
+  background-color: $color-secondary;
+
+  &.active {
+    opacity: 1;
+    transition: $transition;
+  }
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 6 * $basesize;
+  height: 6 * $basesize;
+  object-fit: cover;
+  margin: 2 * $basesize 2 * $basesize 0 0;
+
+  + .notification__badge {
+    background-color: $color-positive-active;
+    transform: scale(1.5);
+    left: 4.5 * $basesize;
+    bottom: 5 * $basesize;
+  }
+}
+
+@media (max-width: 767px) {
+  $basesize: 0.44rem;
+
+  .notification__badge {
+    width: $basesize;
+    height: $basesize;
+  }
+}

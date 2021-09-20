@@ -1,0 +1,61 @@
+.margin-tb {
+  margin: 2 * $basesize auto;
+}
+
+.margin-lr {
+  margin-left: 2 * $basesize;
+  margin-right: 2 * $basesize;
+}
+
+.margin-0 {
+  margin: 0;
+}
+
+.padding-tb {
+  padding-top: 2 * $basesize;
+  padding-bottom: 2 * $basesize;
+}
+
+.padding-0 {
+  padding: 0;
+}
+
+.padding-lr {
+  padding-left: 2 * $basesize;
+  padding-right: 2 * $basesize;
+}
+
+.padding-l-3 {
+  padding-left: 6 * $basesize !important;
+}
+
+.padding-lr-3 {
+  padding-left: 6 * $basesize !important;
+  padding-right: 6 * $basesize !important;
+}
+
+.padding-r-3 {
+  padding-right: 6 * $basesize !important;
+}
+
+.row-end {
+  justify-content: flex-end;
+}
+
+.row-center {
+  justify-content: center;
+  align-items: center;
+}
+
+[class*='icon-']::before {
+  @include absolute-center;
+  left: 25%;
+}
+
+.relative {
+  position: relative;
+}
+
+.float-right {
+  float: right;
+}

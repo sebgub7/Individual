@@ -1,0 +1,134 @@
+table {
+  border-collapse: collapse;
+
+  tr {
+    border-bottom: 1px solid $color-primary-3;
+    padding: $basesize;
+
+    td:last-of-type {
+      text-align: end;
+    }
+  }
+}
+
+.table-general {
+  display: table;
+
+  tr {
+    td {
+      padding: 2 * $basesize 0 0;
+    }
+  }
+
+  .section-header {
+    padding-right: 2 * $basesize;
+  }
+}
+
+.table-products {
+  tr {
+    [class*='icon-']:before {
+      @include absolute-center;
+      opacity: 0;
+      transition: $transition;
+      color: $color-primary-5;
+    }
+
+    &:first-of-type {
+      border-top: 1px solid $color-primary-3;
+    }
+
+    &:hover {
+      background-color: $color-primary-2;
+      transition: $transition;
+
+      [class*='icon-']:before {
+        opacity: 1;
+        transition: $transition;
+      }
+    }
+  }
+
+  &__btn {
+    width: 6 * $basesize;
+    text-align: end;
+    position: relative;
+  }
+
+  &__btn:hover [class*='icon-']:before {
+    font-weight: $font-semibold;
+  }
+}
+
+ul {
+  list-style-type: none;
+  flex-grow: 1;
+  opacity: 0;
+  max-height: 0;
+  transition: $transition;
+  position: relative;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0.9 * $basesize;
+
+  li {
+    font-size: 1.5 * $basesize;
+  }
+}
+
+#general__chart {
+  display: block;
+  margin: 0 auto;
+}
+
+@media (min-width: 575px) {
+  ul {
+    padding: 0 2 * $basesize;
+  }
+
+  table {
+    transform: scale(0.9);
+
+    tr {
+      td {
+        padding: 2 * $basesize;
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  $basesize: 0.44rem;
+
+  table,
+  thead,
+  tbody,
+  th,
+  tr {
+    display: block;
+  }
+
+  td,
+  tr {
+    padding: $basesize;
+  }
+
+  table {
+    padding: 0;
+    transform: scale(0.8);
+  }
+
+  td:first-of-type {
+    border-bottom: 1px solid $color-primary-2;
+  }
+
+  #general__chart {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  table .link {
+    font-size: 5vw;
+  }
+}
