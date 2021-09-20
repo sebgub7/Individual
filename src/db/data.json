@@ -4,8 +4,8 @@
       "record": [
         {
           "id": 1,
-          "name": "Sony",
-          "address": "www.sony.com"
+          "name": "Facebook",
+          "address": "www.facebook.com"
         },
         {
           "id": 2,
@@ -14,18 +14,18 @@
         },
         {
           "id": 3,
-          "name": "Allegro",
-          "address": "www.allegro.pl"
+          "name": "Samsung",
+          "address": "www.samsung.com"
         },
         {
           "id": 4,
-          "name": "Zalando",
-          "address": "www.zalando.com"
+          "name": "Twitch",
+          "address": "www.twitch.tv"
         },
         {
           "id": 5,
-          "name": "Facebook",
-          "address": "www.facebook.com"
+          "name": "Morele",
+          "address": "www.morele.net"
         },
         {
           "id": 6,
@@ -34,13 +34,13 @@
         },
         {
           "id": 7,
-          "name": "Nebbia",
-          "address": "www.nebbia.bio"
+          "name": "Netflix",
+          "address": "www.netflix.com"
         },
         {
           "id": 8,
-          "name": "Blurax",
-          "address": "www.blurax.com"
+          "name": "Bloody",
+          "address": "www.bloody.pl"
         }
       ]
     },
