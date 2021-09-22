@@ -1,7 +1,6 @@
 .dashboard {
   padding-top: 6 * $basesize;
 }
-
 @media (max-width: 767px) {
   $basesize: 0.44rem;
 
@@ -54,7 +53,6 @@
     flex-direction: column;
   }
 }
-
 @media (max-width: 575px) {
   .page__section {
     padding: 2 * $basesize 5%;
@@ -63,5 +61,10 @@
       padding: 0;
       margin: -8 * $basesize;
     }
+  }
+}
+@media (max-width: 1000px) {
+  .page__subsection {
+    visibility: hidden;
   }
 }

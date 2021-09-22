@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="vendor/bootstrap-grid.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 </head>
 
 <body>
@@ -82,7 +83,7 @@
         </div>
         <div id="manager" class="sidebar__elem" type="button">
           <div class="text-btn sidebar__elem__text">YOUR MANAGER</div>
-             <img class="avatar" src="images/manager.jpeg" alt="manager avatar">
+          <img class="avatar" src="images/manager.jpeg" alt="manager avatar">
           <div class="notification__badge active"></div>
           <div class="text-btn sidebar__elem__text">Krzyś</div>
         </div>
@@ -217,25 +218,57 @@
         <div id="general__chart" class="page__section">
           <p class="page__subsection section-header">Earnings chart</p>
           <div class="page__subsection">
-            <div id="btn-tab__signups" class="btn btn-tab padding-l-3">
-              <span class="btn__icon-l btn__dot"></span>
-              <span>signups</span>
+            <div>
+              <canvas id="myChart" width="600" height="400"></canvas>
+              <script>
+                let ctx = document.getElementById('myChart').getContext('2d');
+                let myChart = new Chart(ctx, {
+                  type: 'bar',
+                  data: {
+                    labels: [
+                      '01',
+                      '02',
+                      '03',
+                      '04',
+                      '05',
+                      '06',
+                      '07',
+                      '08',
+                      '09',
+                    ],
+                    datasets: [{
+                      label: 'FTD',
+                      data: [350, 200, 250, 350, 425, 400, 250, 200, 300],
+                      backgroundColor: '#ffa200',
+                      borderColor: '#ffa200',
+                    }, {
+                      label: 'signups',
+                      data: [400, 150, 300, 250, 450, 125, 200, 500, 325],
+                      borderColor: '#56819f',
+                      backgroundColor: '#56819f'
+                    }, {
+                      type: 'bar',
+                      label: 'Earned',
+                      data: [],
+                      borderColor: '#04ae00',
+                      backgroundColor: '#04ae00',
+                    }],
+                  },
+                  options: {
+                    scales: {
+                      yAxes: [{
+                        ticks: {
+                          beginAtZero: true
+                        }
+                      }]
+                    }
+                  }
+                });
+              </script>
             </div>
-            <div id="btn-tab__FTD" class="btn btn-tab padding-l-3">
-              <span class="btn__icon-l btn__dot"></span>
-              <span>FTD</span>
-            </div>
-            <div id="btn-tab__earned" class="btn btn-tab padding-l-3">
-              <span class="btn__icon-l btn__dot"></span>
-              <span>Earned</span>
-            </div>
-          </div>
-          <div class="page__subsection">
-            <img src="/images/graph.png" alt="" srcset="/images/graph.png">
           </div>
         </div>
       </section>
-
       <section id="links" class="page row margin-tb main__elem">
         <div class="page__header padding-tb padding-lr">
           links
