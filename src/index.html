@@ -149,11 +149,28 @@
             </ul>
           </div>
           <div class="menu__elem" type="button">
-            <div class="menu__elem__icon" type="button">
+            <button type="button" class="btn btn-primary menu__elem__icon" data-toggle="modal" data-target="#myModal">
               <i class="icon-quit"></i>
+            </button>
+            <div class="modal fade" id="myModal">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">I'm Modal</h5>
+                    <button type="button" class="closeBtn">&times;</button>
+                  </div>
+                  <div class="modal-body">
+                    <h2>Are u sure?</h2>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-primary">Yes</button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div id="quit-label" class="text-btn menu__elem__text"></div>
           </div>
+          <div id="quit-label" class="text-btn menu__elem__text"></div>
         </div>
       </nav>
     </div>
@@ -400,6 +417,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="vendor/jQuery.js"></script>
   <script src="js/script.js" async defer type="module"></script>
 </body>
 
