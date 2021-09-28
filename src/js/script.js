@@ -25,7 +25,9 @@ export const app = {
         app.updateDateRange(dateObj);
       }
     });
-
+    $('#myModal').on('shown.bs.modal', function () {
+      $('#myInput').trigger('focus')
+    })
     app.initData();
     app.adjustMenu();
     app.addListeners();
